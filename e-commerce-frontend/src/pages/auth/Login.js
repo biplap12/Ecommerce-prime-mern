@@ -36,10 +36,7 @@ function Login() {
           <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">
             Login your account
           </h2>
-          <p className="mt-6  font-extrabold text-center text-green-600">
-           Email: <strong> biplap@biplap.com </strong> <br />
-           Password: <strong> 123</strong>
-          </p>
+         
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">

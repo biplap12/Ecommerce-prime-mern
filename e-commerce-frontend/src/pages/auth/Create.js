@@ -19,6 +19,7 @@ function Create() {
       .then((res) => {
         if (!res.ok) throw new Error();
         toast.success("Account created successfully");
+        navigate("/auth/login");
       })
       .catch((error) => {
         toast.error("Account creation failed");

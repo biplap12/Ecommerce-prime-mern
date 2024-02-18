@@ -14,7 +14,10 @@ function Login() {
         toast.success(res.data.message);
         localStorage.setItem("token", res.data.access_token);
         navigate("/");
+        setTimeout(() => {
         window.location.reload();
+        }
+        , 1500);
       })
       .catch((error) => {
         toast.error(error.response.data.message);

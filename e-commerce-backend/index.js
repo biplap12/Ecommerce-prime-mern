@@ -69,7 +69,8 @@ app.use(function (err, req, res, next) {
   }
 });
 
-app.listen(8000, async () => {
+const port = process.env.PORT ;
+app.listen(port, async () => {
   try {
     const mongoDBURL = process.env.MONGO_DB_URL;
     await mongoose.connect(mongoDBURL);

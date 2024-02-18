@@ -14,6 +14,7 @@ function Login() {
         toast.success(res.data.message);
         localStorage.setItem("token", res.data.access_token);
         navigate("/");
+        window.location.reload();
       })
       .catch((error) => {
         toast.error(error.response.data.message);

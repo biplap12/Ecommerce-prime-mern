@@ -1,10 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
+  const navigate = useNavigate();
   const onSubmit = (values) => {
-    console.log(values);
-
     const requestOptions = {
       method: "POST",
       headers: {
@@ -17,10 +18,10 @@ function Create() {
     fetch(`${process.env.REACT_APP_API_URL}/auth/create`, requestOptions)
       .then((res) => {
         if (!res.ok) throw new Error();
-        alert("Successfully Created Account");
+        toast.success("Account created successfully");
       })
       .catch((error) => {
-        alert("Failed to Created Account");
+        toast.error("Account creation failed");
       });
   };
 
@@ -100,6 +101,16 @@ function Create() {
                 </div>
               </Form>
             </Formik>
+            <div>
+              <p className="mt-2 text-center text-sm text-gray-600">
+                Already have an account?{" "}
+                <span
+                  onClick={() => navigate("/auth/login")}
+                  className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
+                  Login
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
